@@ -1,5 +1,5 @@
 /*
- * Filename:    DynamicArray.ipp
+ * Title:       DynamicArray
  * Author:      Victor Yuen
  * Description: An implemenation of a dynamic array, similar to the vector
  *              class found in the standard C++ library.
