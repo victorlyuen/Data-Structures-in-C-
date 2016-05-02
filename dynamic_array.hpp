@@ -3,7 +3,6 @@
  * Author:      Victor Yuen
  * Description: An interface for a dynamic array, similar to the vector
  *              class found in the standard C++ library.
- *
  */
 
 #ifndef DYNAMIC_ARRAY_HPP

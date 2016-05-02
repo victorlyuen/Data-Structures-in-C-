@@ -3,7 +3,6 @@
  * Author:      Victor Yuen
  * Description: An implemenation of a dynamic array, similar to the vector
  *              class found in the standard C++ library.
- *
  */
 
 #ifndef DYNAMIC_ARRAY_IPP
@@ -34,7 +33,7 @@ template <class T> T& DynamicArray<T>::operator[](size_t index) {
   return array[index];
 }
 template <class T> bool DynamicArray<T>::hasElement(const T &value) {
-  for(int i = 0; i < arr_size; i++) {
+  for(size_t i = 0; i < arr_size; i++) {
     if(array[i] == value) {
       return true;
     }
@@ -48,7 +47,7 @@ template <class T> void DynamicArray<T>::insert(size_t index, const T &value) {
   }
 
   // Move elements over one if necessary
-  for(int i = arr_size, j = i-1 ; i > index; --i, --j) {
+  for(size_t i = arr_size, j = i-1 ; i > index; --i, --j) {
     array[i] = array[j];
   }
 
@@ -70,7 +69,7 @@ template <class T> void DynamicArray<T>::erase(size_t index) {
   }
 
   // Move elements over one if necessary
-  for(int i = index, j = index + 1; j < arr_size; ++i, ++j) {
+  for(size_t i = index, j = index + 1; j < arr_size; ++i, ++j) {
     array[i] = array[j];
   }
 
@@ -95,7 +94,7 @@ template <class T> size_t DynamicArray<T>::max_size() const {
 template <class T> void DynamicArray<T>::resize(size_t new_size) {
   // Make new array with new_size and copy array over
   T *arr2 = new T[new_size];
-  for(int i = 0; i < arr_size; ++i) {
+  for(size_t i = 0; i < arr_size; ++i) {
     arr2[i] = array[i];
   }
 
