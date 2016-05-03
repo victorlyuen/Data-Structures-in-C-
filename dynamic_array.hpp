@@ -17,7 +17,10 @@ template <class T> class DynamicArray {
     DynamicArray(size_t arr_size, const T &value = T());
     ~DynamicArray();
 
-    // // Basic Array Functions
+    // Important Class Methods
+    void operator=(DynamicArray &rhs);
+
+    // Basic Array Functions
     T& at(size_t index);                          // Index Method
     T& operator[](size_t index);
     bool hasElement(const T &value);              // Find Method

@@ -21,6 +21,21 @@ template <class T> DynamicArray<T>::~DynamicArray() {
   delete[] array;
 }
 
+// Important Class Methods
+template <class T> void DynamicArray<T>::operator=(DynamicArray &rhs) {
+  delete[] array;
+
+  // Update Properties
+  arr_size = rhs.arr_size;
+  max_arr_size = rhs.max_arr_size;
+
+  // Create New Array and Copy Elements Over
+  array = new T[max_arr_size];
+  for(size_t i = 0; i < arr_size; ++i) {
+    array[i] = rhs.array[i];
+  }
+}
+
 // Basic Array Functions
 template <class T> T& DynamicArray<T>::at(size_t index) {
   if(index < 0 || index >= arr_size) {
